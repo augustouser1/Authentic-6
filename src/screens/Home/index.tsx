@@ -2,7 +2,7 @@ import { ComponentButtonInterface } from "../../Components/";
 import { ComponentBackgroundOne } from "../../Components/";
 import { useAuth } from "../../hook/auth";
 import { ComponentBackgroundTwo } from "../../Components/";
-import { ImageBackground, Text, TouchableOpacity, View, Image, Alert, KeyboardAvoidingView, } from "react-native";
+import {View} from "react-native";
 export function Home(){
       const {user, signOut} = useAuth()
      return(
@@ -15,9 +15,11 @@ export function Home(){
 
 
 
-
+      <ComponentButtonInterface title="Sair" type="primary"
+         onPressI={async() => await signOut}
+         />
        </ComponentBackgroundTwo>
-
+       
 
 
 

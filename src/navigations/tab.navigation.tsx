@@ -1,6 +1,7 @@
 import {createBottomTabNavigator, BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import { ScreenMensagem,ScreenHome } from '../screens';
-import { ImageBackground, Text, TouchableOpacity, View, Image, Alert, KeyboardAvoidingView, } from "react-native";
+
+import {FontAwesome6,AntDesign} from '@expo/vector-icons'
 type TabParamList = {
    Home: undefined
    Mensagem: undefined
@@ -12,7 +13,7 @@ export type TabTypes = {
 export function TabNavigation (){
     const Tab = createBottomTabNavigator<TabParamList>()
     const person = require("../assets/girl.png")
-    const balao = require("../assets/balaomensagem.png")
+    
     return(
       <Tab.Navigator
         screenOptions={{
@@ -26,8 +27,7 @@ export function TabNavigation (){
         <Tab.Screen name="Home" component={ScreenHome}
           options={{
             tabBarIcon: () => (
-                <Image source={person}>
-               </Image>
+              <FontAwesome6 name="person" size={24} color="black" />
 
             ),
           }}
@@ -35,9 +35,8 @@ export function TabNavigation (){
         <Tab.Screen name="Mensagem" component={ScreenMensagem}
           options={{
             tabBarIcon: () => (
-                <Image source={balao}>
-               </Image>
-
+              <FontAwesome6 name="person" size={24} color="black" />
+   
             ),
           }}
        />

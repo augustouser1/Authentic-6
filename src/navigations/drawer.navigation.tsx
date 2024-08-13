@@ -1,6 +1,6 @@
 import {createDrawerNavigator, DrawerNavigationProp} from '@react-navigation/drawer'
 import {TabNavigation} from './tab.navigation'
-import { ImageBackground, Text, TouchableOpacity, View, Image, Alert, KeyboardAvoidingView, } from "react-native";
+import {FontAwesome6,AntDesign} from '@expo/vector-icons'
 type DrawerParamList = {
     Tab: undefined
 }
@@ -10,7 +10,7 @@ export type DrawerTypes = {
 }
 export function DrawerNavigation(){
    const Drawer = createDrawerNavigator<DrawerParamList>()
-   const logo  = require('../../assets/carta.png')
+   
 return(
   <Drawer.Navigator screenOptions={{
    headerStyle: { backgroundColor:"purple"},
@@ -25,13 +25,12 @@ return(
     options={{
        drawerLabel:'Home',
        headerTitle:'Home',
-      
+       drawerIcon: () => (
+        <FontAwesome6 name="person" size={24} color="black" />
+
+      ),
     }}
     />
-
-
-
-
 
 
   </Drawer.Navigator>
